@@ -1,34 +1,40 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  // Since logo.png is in the public folder, we reference it with /logo.png
+  const logoPath = "/logo.png";
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
+    <div className="layout">
+      <header style={{ 
+        padding: '1rem 2rem', 
+        display: 'flex', 
+        alignItems: 'center',
+        borderBottom: '1px solid #eaeaea' 
+      }}>
+        <a href="/">
+          <img 
+            src={logoPath} 
+            alt="The DIY Assist Logo" 
+            style={{ height: '60px', width: 'auto' }} 
+          />
         </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+      </header>
+
+      <main style={{ padding: '2rem', textAlign: 'center' }}>
+        <section style={{ maxWidth: '800px', margin: '0 auto' }}>
+          <h1>The DIY Assist</h1>
+          <p style={{ fontSize: '1.2rem', color: '#555' }}>
+            Get expert guidance for your home maintenance, tech, and social media projects.
+          </p>
+          
+          <div style={{ marginTop: '2rem', display: 'flex', gap: '10px', justifyContent: 'center' }}>
+            <button style={{ padding: '10px 20px', cursor: 'pointer' }}>I need help (Client)</button>
+            <button style={{ padding: '10px 20px', cursor: 'pointer' }}>I want to help (Provider)</button>
+          </div>
+        </section>
+      </main>
+    </div>
   )
 }
 
